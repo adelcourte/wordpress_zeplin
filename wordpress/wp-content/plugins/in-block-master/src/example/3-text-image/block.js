@@ -86,7 +86,7 @@ registerBlockType(BLOCK_NAME, {
     )
   },
 
-  save: ({ attributes: { imageUrl } }) => (
+  save: ({ attributes: { imageUrl, switchDisplay } }) => (
     <div className='block-text-image'>
       <div className='block-text-image__image'>
         {imageUrl &&

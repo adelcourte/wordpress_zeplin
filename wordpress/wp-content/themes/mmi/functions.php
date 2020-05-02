@@ -109,10 +109,17 @@ class StarterSite extends Timber\Site {
 
     public function add_to_context($context) {
 
+        $posts = new Timber\PostQuery( array(
+            'post_type' => 'testimony'
+        ));
+
         // Our menu occurs on every page, so we add it to the global context.
         $context['menu'] = array(
             'main' => new Timber\Menu('main'),
-            'footer' => new Timber\Menu('footer')
+            'footer_1' => new Timber\Menu('footer_1'),
+            'footer_2' => new Timber\Menu('footer_2'),
+            'footer_3' => new Timber\Menu('footer_3'),
+            'footer_4' => new Timber\Menu('footer_4'),
         );
 
         $context['post_type'] = get_post_type();

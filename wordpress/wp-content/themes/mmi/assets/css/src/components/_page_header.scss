@@ -1,0 +1,36 @@
+.page_header {
+    width: 100vw;
+    padding: 0 7.5vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: hidden;
+
+    &__content {
+        flex-basis: 47.5%;
+
+        &__title {
+            font-weight: bolder;
+            color: $black;
+            font-size: 5rem;
+            line-height: 1.25;
+        }
+
+        &__subtitle {
+            font-weight: lighter;
+            color: $another-grey;
+            font-size: 3.25rem;
+            line-height: 1.25;
+        }
+    }
+
+    &__image {
+        flex-basis: 47.5%;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
