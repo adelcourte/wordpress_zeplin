@@ -3,14 +3,14 @@ import { PLUGIN_NAME } from '../../constants'
 const { wp } = window
 const { registerBlockType } = wp.blocks
 const { __ } = wp.i18n
-const { MediaUpload, InspectorControls, MediaPlaceholder, InnerBlocks, PlainText } = wp.blockEditor
+const { MediaUpload, InspectorControls, MediaPlaceholder, PlainText } = wp.blockEditor
 const { Button, BaseControl, ToggleControl } = wp.components
 
 const BLOCK_NAME = `${PLUGIN_NAME}/page-header`
 
 registerBlockType(BLOCK_NAME, {
   title: __('Page header'),
-  description: __('A simple title-subtitle-image composition for your page introduction'),
+  description: __('A simple title-subtitle-image composition for your page introduction.'),
   icon: 'media-document',
   category: 'common',
   attributes: {

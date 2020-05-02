@@ -8,4 +8,6 @@ import './example/3-text-image/block.js'
 import './example/4-url-button/block.js'
 import './example/5-repeater/block.js'
 import './example/6-ssr-block/block.js'
-import './example/7-page-header/block.js'
+
+import './my_blocks/1_page_header/block.js'
+import './my_blocks/3_discover/block.js'
