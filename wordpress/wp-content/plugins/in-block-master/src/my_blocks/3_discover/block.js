@@ -64,7 +64,7 @@ registerBlockType(BLOCK_NAME, {
             )}
           </div>
           <div className={className + '__image'}>
-            {imageUrl ? (
+            {backgroundImageUrl ? (
               <img src={backgroundImageUrl} alt='' />
             ) : (
               <MediaPlaceholder
@@ -132,6 +132,31 @@ registerBlockType(BLOCK_NAME, {
             />
           </BaseControl>
           <BaseControl>
+            <MediaUpload
+              onSelect={(media) => setAttributes({ backgroundImageUrl: media.url, backgroundImageId: media.id })}
+              type='image'
+              value={backgroundImageId}
+              className='file'
+              render={({ open }) => (
+                <Button
+                  className={!backgroundImageUrl && 'button button-large'}
+                  onClick={open}
+                >
+                  {
+                    imageUrl ? (
+                      <div className='inspector-controls-flex'>
+                        <img className='inspector-controls-flex-img' src={backgroundImageUrl} alt='' />
+                        <p>{__('Replace image')}</p>
+                      </div>
+                    ) : (
+                      __('Select image')
+                    )
+                  }
+                </Button>
+              )}
+            />
+          </BaseControl>
+          <BaseControl>
             <ToggleControl
               label={__("Alterner l'image et le texte")}
               checked={switchDisplay}
@@ -149,7 +174,7 @@ registerBlockType(BLOCK_NAME, {
             <p className="discover__content__name">{name}</p>
             <p className="discover__content__title">{title}</p>
             <p className="discover__content__description">{description}</p>
-            <button className="discover__content__button"></button>
+            <button className="discover__content__button">Découvrir {name}</button>
         </div>
         <div className="discover__illustration">
             {

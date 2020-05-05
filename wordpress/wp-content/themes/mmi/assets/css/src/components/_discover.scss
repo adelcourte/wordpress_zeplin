@@ -1,40 +1,63 @@
 .discover {
     width: 100vw;
-    padding: 0 7.5vw;
+    padding: 15rem 7.5vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-size: contain;
     position: relative;
+    margin: 15rem 0;
 
     &__content {
-        flex-basis: 47.5%;
+        flex-basis: 45%;
+
+        * {
+            line-height: 1.35;
+            margin: 0 auto;
+            font-size: 1.8rem;
+            font-weight: bolder;
+        }
 
         &__name {
-            
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
         &__title {
-            font-weight: bolder;
             color: $black;
-            font-size: 5rem;
-            line-height: 1.25;
+            font-size: 3.5rem;
         }
 
-        &__subtitle {
+        &__description {
             font-weight: lighter;
             color: $another-grey;
-            font-size: 3.25rem;
-            line-height: 1.25;
+            margin: 1.75rem auto 3.5rem auto;
+        }
+
+        &__button {
+            padding: 1.5rem 2.5rem;
+            background: $seafoam-blue;
+            border-radius: 1000rem;
+            color: #fff;
+            text-align: center;
         }
     }
 
     &__image {
-        flex-basis: 47.5%;
+        flex-basis: 45%;
 
         img {
             width: 100%;
             height: auto;
+        }
+    }
+
+    &__shape {
+        position: absolute;
+        right: 0;
+        z-index: -2;
+
+        img {
+            height: 57.5rem;
         }
     }
 }

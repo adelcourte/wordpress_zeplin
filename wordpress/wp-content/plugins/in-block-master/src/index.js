@@ -10,4 +10,5 @@ import './example/5-repeater/block.js'
 import './example/6-ssr-block/block.js'
 
 import './my_blocks/1_page_header/block.js'
+import './my_blocks/2_concept/block.js'
 import './my_blocks/3_discover/block.js'

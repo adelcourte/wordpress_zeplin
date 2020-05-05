@@ -15,7 +15,6 @@
 // Tools (helper, mixins and function)
 // @import 'tools/'
 
-
 // Base
 @import 'elements/body';
 @import 'elements/blocks';
@@ -33,6 +32,8 @@
 
 // Components
 @import 'components/page_header';
+@import 'components/concept';
+@import 'components/discover';
 
 // Trumps
 @import 'trumps/print';

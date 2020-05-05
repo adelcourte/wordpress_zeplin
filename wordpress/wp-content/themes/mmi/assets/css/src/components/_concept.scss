@@ -1,0 +1,56 @@
+.concept {
+    padding: 30rem 7.5vw 0 7.5vw;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    &__name {
+        flex-basis: 45%;
+
+        span {
+            color: $seafoam-blue;
+            font-size: 8rem;
+            font-weight: bolder;
+            line-height: 1;
+            padding-bottom: 3rem;
+            position: relative;
+
+            &:after {
+                content: "";
+                height: 1.5rem;
+                background: $seafoam-blue;
+                width: 50%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    &__content {
+        flex-basis: 45%;
+        color: $another-grey;
+
+        p {
+            font-size: 1.8rem;
+            line-height: 1.35;
+        }
+
+        &__title {
+            font-size: 2.5rem !important;
+            font-weight: bolder;
+            color: $black;
+        }
+    }
+
+    &__shape {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -2;
+
+        img {
+            width: 100vw;
+        }
+    }
+}
