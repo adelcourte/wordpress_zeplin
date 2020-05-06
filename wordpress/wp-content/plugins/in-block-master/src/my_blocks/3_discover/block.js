@@ -168,26 +168,32 @@ registerBlockType(BLOCK_NAME, {
     )
   },
 
-  save: ({ attributes: { imageUrl, backgroundImageUrl, name, title, description, switchDisplay } }) => (
-    <section className="discover">
-        <div className="discover__content">  
-            <p className="discover__content__name">{name}</p>
-            <p className="discover__content__title">{title}</p>
-            <p className="discover__content__description">{description}</p>
-            <button className="discover__content__button">Découvrir {name}</button>
-        </div>
-        <div className="discover__illustration">
-            {
-                imageUrl &&
-                <img src={imageUrl} alt='discover_illustration'></img>
-            }
-        </div>
-        <div className="discover__shape">
-            {
-                backgroundImageUrl &&
-                <img src={backgroundImageUrl} alt='discover_shape'></img>
-            }
-        </div>
-    </section>
-  )
+  save: ({ attributes: { imageUrl, backgroundImageUrl, name, title, description, switchDisplay } }) => {
+
+    const discoverClass = `discover ${switchDisplay && 'discover_reverse'}`;
+    const shapeClass = `discover__shape ${switchDisplay && 'discover__shape_reverse'}`;
+
+    return(
+      <section className={discoverClass}>
+          <div className="discover__content">  
+              <p className="discover__content__name">{name}</p>
+              <p className="discover__content__title">{title}</p>
+              <p className="discover__content__description">{description}</p>
+              <button className="discover__content__button">Découvrir {name}</button>
+          </div>
+          <div className="discover__illustration">
+              {
+                  imageUrl &&
+                  <img src={imageUrl} alt='discover_illustration'></img>
+              }
+          </div>
+          <div className={shapeClass}>
+              {
+                  backgroundImageUrl &&
+                  <img src={backgroundImageUrl} alt='discover_shape'></img>
+              }
+          </div>
+      </section>
+    )
+  }
 })

@@ -5,13 +5,11 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    margin: 15rem 0;
 
     &__content {
-        flex-basis: 45%;
+        flex-basis: 40%;
 
         * {
-            line-height: 1.35;
             margin: 0 auto;
             font-size: 1.8rem;
             font-weight: bolder;
@@ -25,12 +23,14 @@
         &__title {
             color: $black;
             font-size: 3.5rem;
+            line-height: 1.15;
         }
 
         &__description {
             font-weight: lighter;
             color: $another-grey;
             margin: 1.75rem auto 3.5rem auto;
+            line-height: 1.35;
         }
 
         &__button {
@@ -42,8 +42,8 @@
         }
     }
 
-    &__image {
-        flex-basis: 45%;
+    &__illustration {
+        flex-basis: 55%;
 
         img {
             width: 100%;
@@ -59,5 +59,19 @@
         img {
             height: 57.5rem;
         }
+    }
+}
+
+.discover_reverse {
+    flex-direction: row-reverse !important;
+}
+
+.discover__shape_reverse {
+    position: absolute;
+    left: 0 !important;
+    z-index: -2;
+
+    img {
+        height: 57.5rem;
     }
 }

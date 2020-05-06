@@ -9,7 +9,7 @@ button,
 a {
   text-decoration: none; color: $color-link;
 
-  &:hover { text-decoration: underline; }
+  &:hover { text-decoration: none; }
 }
 button {
   background-color: transparent;
