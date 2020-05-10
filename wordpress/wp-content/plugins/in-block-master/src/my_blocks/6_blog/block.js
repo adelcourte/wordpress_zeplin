@@ -6,26 +6,14 @@ const { __ } = wp.i18n
 const { MediaPlaceholder, PlainText } = wp.blockEditor
 const { Button } = wp.components
 
-const BLOCK_NAME = `${PLUGIN_NAME}/solutions`
+const BLOCK_NAME = `${PLUGIN_NAME}/blog`
 
 registerBlockType(BLOCK_NAME, {
-  title: __('Solutions'),
-  description: __('Present the solutions you offer to your client.'),
+  title: __('Blog'),
+  description: __('If your company runs a blog, you may use this block to present latest posts.'),
   icon: 'nametag',
   category: 'common',
   attributes: {
-    imageUrl: {
-      type: 'string'
-    },
-    imageId: {
-      type: 'integer'
-    },
-    backgroundImageUrl: {
-      type: 'string'
-    },
-    backgroundImageId: {
-      type: 'integer'
-    },
     title: {
       type: 'string'
     },
@@ -35,21 +23,9 @@ registerBlockType(BLOCK_NAME, {
   },
 
   edit: props => {
-    const { attributes: { imageUrl, imageId, backgroundImageUrl, backgroundImageId, title, content = [] }, setAttributes, className } = props
+    const { attributes: { title, content = [] }, setAttributes, className } = props
     return (
       <>
-        <div className={className + '__image'}>
-          {imageUrl ? (
-            <img src={backgroundImageUrl} alt='' />
-          ) : (
-            <MediaPlaceholder
-              onSelect={(media) => setAttributes({ backgroundImageUrl: media.url, backgroundImageId: media.id })}
-              allowedTypes={['image']}
-              multiple={false}
-              labels={{ title: 'Background shape' }}
-            />
-          )}
-        </div>
         <div className={className + '__text'}>
           <PlainText 
             keepplaceholderonfocus="true"
@@ -68,7 +44,7 @@ registerBlockType(BLOCK_NAME, {
                 //onSelect={(media) => setAttributes({ imageUrl: media.url, imageId: media.id })}
                 allowedTypes={['image']}
                 multiple={false}
-                labels={{ title: 'Icon' }}
+                labels={{ title: 'Image' }}
                 onSelect={(media) => {
                   const newContent = [...content]
                   newContent[index].imageUrl = media.url
@@ -87,11 +63,11 @@ registerBlockType(BLOCK_NAME, {
               />
               <PlainText
                 keepplaceholderonfocus
-                placeholder={__('Description')}
-                value={value.description}
-                onChange={(description) => {
+                placeholder={__('Date')}
+                value={value.date}
+                onChange={(date) => {
                   const newContent = [...content]
-                  newContent[index].description = description
+                  newContent[index].date = date
                   setAttributes({ content: newContent })
                 }}
               />
@@ -121,26 +97,23 @@ registerBlockType(BLOCK_NAME, {
 
   save: ({ attributes: { backgroundImageUrl, title, content } }) => {
     return(
-      <section className="solutions">
+      <section className="blog">
         <p className="big_title">{title}</p>
-        {content.map((value) => {
-          const imageUrl = `${value.imageUrl}`
-          return(
-            <div className="solution">
-              <div className="solution__icon">
-                <img src={imageUrl} alt="solution_icon"></img>
+        <div className="blog__posts">
+          {content.map((value) => {
+            const imageUrl = `${value.imageUrl}`
+            return(
+              <div className="blog__posts__post">
+                <div className="blog__posts__post__image">
+                  <img src={imageUrl} alt="post_image"></img>
+                </div>
+                <p className="blog__posts__post__title">{value.title}</p>
+                <p className="blog__posts__post__date">{value.date}</p>
               </div>
-              <p className="solution__title">{value.title}</p>
-              <p className="solution__description">{value.description}</p>
-            </div>
-          )
-        })}
-        <div className="solutions__shape">
-            {
-                backgroundImageUrl &&
-                <img src={backgroundImageUrl} alt='solutions_shape'></img>
-            }
+            )
+          })}
         </div>
+        <button className="blue_button">Plus d'articles</button>
       </section>
     )
   }

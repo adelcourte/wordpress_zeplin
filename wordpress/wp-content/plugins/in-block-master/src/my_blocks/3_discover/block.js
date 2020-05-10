@@ -177,9 +177,9 @@ registerBlockType(BLOCK_NAME, {
       <section className={discoverClass}>
           <div className="discover__content">  
               <p className="discover__content__name">{name}</p>
-              <p className="discover__content__title">{title}</p>
+              <p className="big_title">{title}</p>
               <p className="discover__content__description">{description}</p>
-              <button className="discover__content__button">Découvrir {name}</button>
+              <button className="blue_button">Découvrir {name}</button>
           </div>
           <div className="discover__illustration">
               {

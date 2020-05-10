@@ -1,0 +1,20 @@
+.blue_button {
+    padding: 1.5rem 2.5rem;
+    background: $seafoam-blue;
+    border-radius: 1000rem;
+    color: #fff;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bolder;
+
+    &:hover {
+        background: $seafoam-blue-dark;
+    }
+}
+
+.big_title {
+    color: $black;
+    font-size: 3.5rem;
+    line-height: 1.35;
+    font-weight: bolder;
+}
